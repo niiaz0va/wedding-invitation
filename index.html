@@ -9,6 +9,12 @@
 </head>
 <body>
 
+    <!-- Музыкалык баскыч (Кнопка музыки) -->
+    <div id="music-container">
+        <button id="music-btn" onclick="toggleMusic()">🎵 Музыка</button>
+        <audio id="bg-music" src="music.mp3" loop></audio>
+    </div>
+
     <!-- 1. Башкы бет -->
     <header class="hero">
         <div class="hero-content">
@@ -18,7 +24,21 @@
         </div>
     </header>
 
-    <!-- 2. Чакыруу тексти -->
+    <!-- 2. Сүйүү саптары же Аят (Блок со стихом/аятом) -->
+    <section class="poem-section">
+        <div class="poem-content">
+            <p class="poem-line">"Аллахтын белгилеринен — силер бейпилдик табууңар үчүн өзүңөрдөн жубайларды жаратканы жана ортоңордо сүйүү менен мээримдүүлүктү пайда кылганы..."</p>
+            <p class="poem-author">(Рум сүрөөсү, 21-аят)</p>
+            
+            <!-- Эгер кааласаңыз, өйдөдөгү аяттын ордуна төмөнкү 4 сап ырды койсоңуз болот:
+            <p class="poem-line"> Жашоонун узак, татаал жолдорунан,<br>
+            Жетүүчү бакыт таап оңубуздан.<br>
+            Баш кошуп эки жүрөк бирге соккон,<br>
+            Куттук айт, бата бергин соңубуздан.</p> -->
+        </div>
+    </section>
+
+    <!-- 3. Чакыруу тексти -->
     <section class="invitation-text">
         <p class="greeting">Урматтуу коноктор!</p>
         <p class="main-p">Сиздерди балдарыбыздын үйлөнүү тоюна арналган салтанатка келип, ак дасторкон үстүндө бата берип, сыйлуу коногубуз болууга чакырабыз!</p>
@@ -42,7 +62,7 @@
         </div>
     </section>
 
-    <!-- 3. Таймер -->
+    <!-- 4. Таймер -->
     <section class="countdown-section">
         <h2>Тойго чейин калды:</h2>
         <div id="countdown" class="timer">
@@ -53,11 +73,12 @@
         </div>
     </section>
 
-    <!-- 4. RSVP формасы -->
+    <!-- 5. RSVP формасы -->
     <section class="rsvp-section">
         <h2>Тойго келишиңизди ырастаңыз</h2>
+        <p>Сураныч, 1-айга чейин суроолорго жооп берип, келүүңүздү тактап коюңуз.</p>
         
-        <form name="rsvp" method="POST" data-netlify="true" class="rsvp-form">
+        <form name="rsvp" method="POST" data-netlify="true" action="/success.html" class="rsvp-form">
             <div class="form-group">
                 <label for="name">Атыңыз жана фамилияңыз:</label>
                 <input type="text" id="name" name="guest_name" required placeholder="Асан Үсөн уулу">
