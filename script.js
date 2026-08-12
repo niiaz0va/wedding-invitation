@@ -9,6 +9,22 @@ function updateCountdown() {
         clearInterval(timerInterval);
         return;
     }
+// Функция управления музыкой
+function toggleMusic() {
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("music-btn");
+    
+    if (music.paused) {
+        music.play().catch(error => console.log("Музыка заблокирована браузером:", error));
+        btn.innerText = "⏸️ Пауза";
+        btn.classList.add("playing");
+    } else {
+        music.pause();
+        btn.innerText = "🎵 Музыка";
+        btn.classList.remove("playing");
+    }
+}
+
 
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
