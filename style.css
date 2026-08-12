@@ -164,6 +164,62 @@ section h2 {
     box-sizing: border-box;
     font-family: inherit;
 }
+/* Стиль для плавающей кнопки музыки */
+#music-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+#music-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #B5835A;
+    color: #B5835A;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#music-btn.playing {
+    background-color: #B5835A;
+    color: white;
+}
+
+/* Стиль для блока со стихом или аятом */
+.poem-section {
+    padding: 60px 25px 30px 25px;
+    background-color: #ffffff;
+}
+
+.poem-content {
+    max-width: 600px;
+    margin: 0 auto;
+    border-left: 2px solid #B5835A;
+    border-right: 2px solid #B5835A;
+    padding: 10px 30px;
+}
+
+.poem-line {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #444;
+    font-style: italic;
+    margin: 0;
+}
+
+.poem-author {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
 
 .radio-group label {
     display: block;
