@@ -1,79 +1,86 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ky">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение на свадьбу</title>
-    <!-- Подключаем красивые шрифты -->
+    <title>Үйлөнүү тойго чакыруу</title>
     <link href="https://googleapis.com" rel="stylesheet">
-    <!-- Подключаем файл со стилями -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. Главный экран -->
+    <!-- 1. Башкы бет -->
     <header class="hero">
         <div class="hero-content">
-            <p class="hero-sub">Приглашение на свадьбу</p>
-            <h1>Иван & Мария</h1>
-            <p class="hero-date">12.09.2026</p>
+            <p class="hero-sub">ҮЙЛӨНҮҮ ТОЙГО ЧАКЫРУУ</p>
+            <h1>Жыргалбек <br>& <br>Зубайда</h1>
+            <p class="hero-date">09.09.2026</p>
         </div>
     </header>
 
-    <!-- 2. Таймер -->
+    <!-- 2. Чакыруу тексти -->
+    <section class="invitation-text">
+        <p class="greeting">Урматтуу коноктор!</p>
+        <p class="main-p">Сиздерди балдарыбыздын үйлөнүү тоюна арналган салтанатка келип, ак дасторкон үстүндө бата берип, сыйлуу коногубуз болууга чакырабыз!</p>
+        
+        <div class="info-details">
+            <div class="info-item">
+                <span class="icon">📅</span>
+                <strong>КҮНҮ:</strong>
+                <p>09.09.2026</p>
+            </div>
+            <div class="info-item">
+                <span class="icon">⏰</span>
+                <strong>УБАКТЫСЫ:</strong>
+                <p>17:00</p>
+            </div>
+            <div class="info-item">
+                <span class="icon">📍</span>
+                <strong>ДАРЕГИ:</strong>
+                <p>Ресторан «ДИНАТ»</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Таймер -->
     <section class="countdown-section">
-        <h2>До торжества осталось:</h2>
+        <h2>Тойго чейин калды:</h2>
         <div id="countdown" class="timer">
-            <div class="timer-item"><span id="days">00</span><p>дней</p></div>
-            <div class="timer-item"><span id="hours">00</span><p>часов</p></div>
-            <div class="timer-item"><span id="minutes">00</span><p>минут</p></div>
+            <div class="timer-item"><span id="days">00</span><p>күн</p></div>
+            <div class="timer-item"><span id="hours">00</span><p>саат</p></div>
+            <div class="timer-item"><span id="minutes">00</span><p>мүнөт</p></div>
             <div class="timer-item"><span id="seconds">00</span><p>секунд</p></div>
         </div>
     </section>
 
-    <!-- 3. Дресс-код -->
-    <section class="dresscode-section">
-        <h2>Дресс-код</h2>
-        <p>Мы будем рады видеть вас в нарядах следующих оттенков:</p>
-        <div class="palette">
-            <div class="color-circle" style="background-color: #D4A373;"></div>
-            <div class="color-circle" style="background-color: #E9D8A6;"></div>
-            <div class="color-circle" style="background-color: #94D2BD;"></div>
-            <div class="color-circle" style="background-color: #0A9396;"></div>
-            <div class="color-circle" style="background-color: #AE2012;"></div>
-        </div>
-    </section>
-
-    <!-- 4. Форма RSVP (Netlify Forms ready) -->
+    <!-- 4. RSVP формасы -->
     <section class="rsvp-section">
-        <h2>Подтверждение присутствия</h2>
-        <p>Пожалуйста, ответьте на вопросы до 1 августа, чтобы мы лучше подготовились.</p>
+        <h2>Тойго келишиңизди ырастаңыз</h2>
+        <p>Сураныч, 1-айга чейин суроолорго жооп берип, келүүңүздү тактап коюңуз.</p>
         
-        <!-- Атрибут data-netlify="true" заставит Netlify автоматически собирать ответы -->
         <form name="rsvp" method="POST" data-netlify="true" class="rsvp-form">
             <div class="form-group">
-                <label for="name">Ваше имя и фамилия:</label>
-                <input type="text" id="name" name="guest_name" required placeholder="Иван Иванов">
+                <label for="name">Атыңыз жана фамилияңыз:</label>
+                <input type="text" id="name" name="guest_name" required placeholder="Асан Үсөн уулу">
             </div>
 
             <div class="form-group">
-                <label>Сможете ли вы присутствовать?</label>
+                <label>Сиз тойго келе аласызбы?</label>
                 <div class="radio-group">
-                    <label><input type="radio" name="attendance" value="yes" required> Да, с удовольствием</label>
-                    <label><input type="radio" name="attendance" value="no"> К сожалению, не смогу</label>
+                    <label><input type="radio" name="attendance" value="yes" required> Ооба, буюрса барам</label>
+                    <label><input type="radio" name="attendance" value="no"> Тилекке каршы, келе албайм</label>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="preferences">Пожелания по напиткам / меню или комментарий:</label>
-                <textarea id="preferences" name="comments" rows="3" placeholder="Например: сухое белое вино / аллергия на орехи"></textarea>
+                <label for="preferences">Каалоо-тилектер же кошумча билдирүү:</label>
+                <textarea id="preferences" name="comments" rows="3" placeholder="Жообуңузду ушул жерге жазсаңыз болот..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Отправить ответ</button>
+            <button type="submit" class="submit-btn">Жоопту жөнөтүү</button>
         </form>
     </section>
 
-    <!-- Подключаем логику скриптов -->
     <script src="script.js"></script>
 </body>
 </html>
