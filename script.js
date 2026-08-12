@@ -9,21 +9,31 @@ function updateCountdown() {
         clearInterval(timerInterval);
         return;
     }
-// Функция управления музыкой
+// Прогрессивная функция управления музыкой
 function toggleMusic() {
     const music = document.getElementById("bg-music");
     const btn = document.getElementById("music-btn");
     
     if (music.paused) {
-        music.play().catch(error => console.log("Музыка заблокирована браузером:", error));
-        btn.innerText = "⏸️ Пауза";
-        btn.classList.add("playing");
+        // Явно загружаем аудио перед стартом
+        music.load(); 
+        
+        music.play()
+            .then(() => {
+                btn.innerText = "⏸️ Пауза";
+                btn.classList.add("playing");
+            })
+            .catch(error => {
+                console.log("Ошибка воспроизведения:", error);
+                alert("Музыканы ойнотуу кечиктирилди. Баскычты кайра басыңыз.");
+            });
     } else {
         music.pause();
         btn.innerText = "🎵 Музыка";
         btn.classList.remove("playing");
     }
 }
+
 
 
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
